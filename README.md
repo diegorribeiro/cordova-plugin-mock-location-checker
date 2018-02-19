@@ -18,6 +18,18 @@ Ionic v2 local build
     # Newest versions
     ionic cordova plugin add https://github.com/diegorribeiro/cordova-plugin-mock-location-checker.git
 
+## Uninstall
+
+Cordova local build
+
+    # Old versions
+    cordova plugin rm https://github.com/diegorribeiro/cordova-plugin-mock-location-checker.git
+
+Ionic v2 local build
+
+    # Newest versions
+    ionic cordova plugin rm https://github.com/diegorribeiro/cordova-plugin-mock-location-checker.git
+
 
 ## Usage in javascript
 
