@@ -25,7 +25,7 @@
         <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
 	</config-file>
 
-    <source-file src="src/android/com/diegorribeiro/MockLocation.java" target-dir="src/com/diegorribeiro"/>
+    <source-file src="src/android/com/diegorribeiro/MockLocationChecker.java" target-dir="src/com/diegorribeiro"/>
 
   </platform>
 
