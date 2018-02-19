@@ -1,0 +1,26 @@
+{
+  "name": "cordova-plugin-mock-location-checker",
+  "version": "1.0.0",
+  "description": "Cordova Mock Location Checker Plugin",
+  "author": "diegorribeiro",
+  "cordova": {
+    "id": "cordova-plugin-mock-location-checker",
+    "platforms": "android"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegorribeiro/cordova-plugin-mock-location-checker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diegorribeiro/cordova-plugin-mock-location-checker/issues"
+  },
+  "homepage": "https://github.com/diegorribeiro/cordova-plugin-mock-location-checker#readme",
+  "keywords": [
+    "cordova",
+    "mock",
+    "location",
+    "checker",
+	"mock-location"
+  ],
+  "license": "MIT"
+}
