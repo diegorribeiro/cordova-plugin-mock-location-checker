@@ -2,6 +2,10 @@
 
 This is a cordova plugin to check enabled\disabled GPS imitations in android settings.
 
+This plugin get mock location in Android api < 18 AND api >= 18, Android M Bugs Fixed.
+
+Plugin works in Ionic v1, v2
+
 ## Supported Platforms
 
 - Android API all versions
