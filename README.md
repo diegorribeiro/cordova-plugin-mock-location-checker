@@ -4,7 +4,7 @@ This is a cordova plugin to check enabled\disabled GPS imitations in android set
 
 ## Supported Platforms
 
-- Android
+- Android API all versions
 
 ## Installation
 
