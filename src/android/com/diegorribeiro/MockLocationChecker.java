@@ -5,7 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import android.provider.Settings.Secure;
-import android.location;
+import android.location.Location;
 
 public class MockLocationChecker extends CordovaPlugin {
 
@@ -30,20 +30,6 @@ public class MockLocationChecker extends CordovaPlugin {
         }else {
             return false;
         }
-
-        /*
-        if (action.equals("check")) {
-          if (Secure.getString(this.cordova.getActivity().getContentResolver(), Secure.ALLOW_MOCK_LOCATION).equals("0")) {
-            callbackContext.success("false");
-          } else {
-            callbackContext.success("true");
-          }
-          return true;
-        } else {
-           return false;
-        }
-
-        */
 
     }
 }

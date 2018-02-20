@@ -21,9 +21,13 @@
 		</feature>
     </config-file>
 
-	<config-file target="AndroidManifest.xml" parent="/*">
-        <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
-	</config-file>
+    <framework src="com.google.android.gms:play-services-location:11.4.2" />
+
+  	<config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />          
+  	</config-file>
 
     <source-file src="src/android/com/diegorribeiro/MockLocationChecker.java" target-dir="src/com/diegorribeiro"/>
 
