@@ -34,7 +34,7 @@ public class MockLocationChecker extends CordovaPlugin{
     private String statusMock = "";
 
     @Override
-    public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, JSONArray data, final CallbackContext callbackContext) throws JSONException {
 
         if (action.equals("check")) {
             if (android.os.Build.VERSION.SDK_INT < 18) {
