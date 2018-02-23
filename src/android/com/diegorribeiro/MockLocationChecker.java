@@ -82,7 +82,7 @@ public class MockLocationChecker extends CordovaPlugin{
 
                             String datetime = formatDate(dateGPS);
 
-                             //Log.e("DATA-GPS", "Lat:" + location.getLatitude() + " - Long:" + location.getLongitude() + " - Data e hora:" + datetime);
+                             Log.e("DATA-GPS", "Lat:" + location.getLatitude() + " - Long:" + location.getLongitude() + " - Data e hora:" + datetime);
 
                             if (location.isFromMockProvider() == true) {
                                 statusMock = "mock-true";
