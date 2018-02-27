@@ -78,65 +78,6 @@ public class MockLocationChecker extends CordovaPlugin{
 
                 if(listenerON != true) {
 
-                    // Define a listener that responds to location updates
-                    locationListener = new LocationListener() {
-                        public void onLocationChanged(Location location) {
-
-
-                            // Called when a new location is found by the network location provider.
-
-                            Date dateGPS = new Date(location.getTime());
-
-                            String datetime = formatDate(dateGPS);
-
-                             Log.e("DATA-GPS", "Lat:" + location.getLatitude() + " - Long:" + location.getLongitude() + " - Data e hora:" + datetime);
-
-                             try{
-
-                                 objGPS.put("lat",location.getLatitude());
-                                 objGPS.put("long",location.getLongitude());
-                                 objGPS.put("time",location.getTime());
-                                 objGPS.put("formatTime",datetime);
-                                 objGPS.put("extra",null);
-
-                                 if (location.isFromMockProvider() == true) {
-                                     objGPS.put("info","mock-true");
-                                     statusMock = "mock-true";
-                                 } else {
-                                     objGPS.put("info","mock-false");
-                                     statusMock = "mock-false";
-                                 }
-
-                                 if(arrayGPS.length() == 0){
-                                     arrayGPS.put(objGPS);
-                                 }
-
-                                 Log.e("GPS-LOCATION-ARRAY", arrayGPS.toString());
-
-                                 callbackContext.success(arrayGPS);
-
-
-                             } catch (JSONException e) {
-                                e.printStackTrace();
-                                callbackContext.error(e.toString());
-                             }
-
-
-                        }
-
-                        public void onStatusChanged(String provider, int status, Bundle extras) {
-
-                        }
-
-                        public void onProviderEnabled(String provider) {
-
-                        }
-
-                        public void onProviderDisabled(String provider) {
-
-                        }
-                    };
-
                     // Here, thisActivity is the current activity
                     if (ContextCompat.checkSelfPermission(this.cordova.getActivity(),
                             Manifest.permission.ACCESS_FINE_LOCATION)
@@ -163,6 +104,69 @@ public class MockLocationChecker extends CordovaPlugin{
                             // result of the request.
                         }
                     }
+
+                    // Define a listener that responds to location updates
+                    locationListener = new LocationListener() {
+                        public void onLocationChanged(Location location) {
+
+                            // Called when a new location is found by the network location provider.
+
+                            Date dateGPS = new Date(location.getTime());
+
+                            String datetime = formatDate(dateGPS);
+
+                             Log.i("DATA-GPS", "Lat:" + location.getLatitude() + " - Long:" + location.getLongitude() + " - Data e hora:" + datetime);
+
+                             Log.i("DATA-GPS-PROVIDER", location.getProvider());
+
+                             try{
+
+                                 objGPS.put("lat",location.getLatitude());
+                                 objGPS.put("long",location.getLongitude());
+                                 objGPS.put("time",location.getTime());
+                                 objGPS.put("formatTime",datetime);
+                                 objGPS.put("extra",null);
+
+
+                                 if (location.isFromMockProvider() == true) {
+                                     objGPS.put("info","mock-true");
+                                     //statusMock = "mock-true";
+                                 } else {
+                                     objGPS.put("info","mock-false");
+                                     //statusMock = "mock-false";
+                                 }
+
+                                 if(arrayGPS.length() == 0){
+                                     arrayGPS.put(objGPS);
+                                 }
+
+                                 Log.i("GPS-LOCATION-ARRAY", arrayGPS.toString());
+
+                                 callbackContext.success(arrayGPS);
+
+
+                             } catch (JSONException e) {
+                                e.printStackTrace();
+                                callbackContext.error(e.toString());
+                             }
+
+
+                        }
+
+                        public void onStatusChanged(String provider, int status, Bundle extras) {
+                            listenerON = false;
+                            Log.i("GPS-STATUS-CHANGED", provider.toString());
+
+                        }
+
+                        public void onProviderEnabled(String provider) {
+
+                        }
+
+                        public void onProviderDisabled(String provider) {
+
+                        }
+                    };
 
                     listenerON = true;
 
